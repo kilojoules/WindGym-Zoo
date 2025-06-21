@@ -1,0 +1,61 @@
+[build-system]
+requires = ["setuptools>=60"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "windzoo"
+version = "0.0.1"
+description = "Benchmarking and leaderboard runner for WindGym agents"
+authors = [
+  { name = "Julian Quick" }
+]
+requires-python = ">=3.9"
+classifiers = [
+  "Programming Language :: Python :: 3",
+  "Operating System :: OS Independent",
+  "License :: OSI Approved :: MIT License"
+]
+dependencies = [
+  "gymnasium",
+  "pettingzoo",
+  "wandb",
+  "wetb",
+  "xarray",
+  "numpy<2",
+  "tqdm"
+]
+
+[tool.setuptools]
+packages = []
+
+[tool.pixi.project]
+channels = ["conda-forge", "pytorch"]
+platforms = ["osx-arm64", "linux-64"]
+
+
+[tool.pixi.dependencies]
+hdf5 = "*"
+h5py = "*"
+netcdf4 = "*"
+numpy = "<2"
+pytz = ">=2025.1,<2026"
+gymnasium-all = ">=1.0.0,<2"
+pre-commit = ">=4.0.1,<5"
+pytest = ">=8.3.4,<9"
+pytest-cov = ">=6.0.0,<7"
+wandb = ">=0.20.1,<0.21"
+xarray = ">=2022.0.0,<2025"
+tqdm = "*"
+pettingzoo = "*"
+gymnasium = "*"
+
+
+[tool.pixi.pypi-dependencies]
+stable-baselines3 = "*"
+windgym = { git = "https://gitlab.windenergy.dtu.dk/sys/windgym.git", rev = "main" }
+
+
+[tool.pixi.tasks]
+test = { cmd = "pytest" }
+lint = { cmd = "pre-commit run --all-files" }
+
