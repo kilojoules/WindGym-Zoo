@@ -11,16 +11,6 @@ This repository is designed to support nightly benchmarking pipelines and commun
 
 ---
 
-## 🔍 Contents
-
-windgym-zoo/
-├── agents/ # Pretrained agents with metadata and evaluation outputs
-├── configs/ # Frozen WindGym environment configs (for evaluation)
-├── results/ # Leaderboard results (optional, updated nightly)
-├── templates/ # Submission templates and metadata guidelines
-└── README.md
-
-
 ## 🧪 Getting Started
 
 Clone this repo alongside `windgym`, then evaluate all models:
