@@ -18,6 +18,12 @@ Clone this repo alongside `windgym`, then evaluate all models:
 ```bash
 git clone https://gitlab.com/kilojoules/windgym-zoo
 cd windgym
-pixi run python scripts/eval_leaderboard.py --zoo ../windgym-zoo
+pixi run python scripts/generate_config.py \
+  --nx 2 --ny 1 \
+  --template configs/N_turbines_most_sensors.yaml \
+  --output configs/2_turbines_most_sensors.yaml
+pixi run python scripts/eval_leaderboard.py \
+   --config-name 2_turbines_most_sensors
+
 ```
 
