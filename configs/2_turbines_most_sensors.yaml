@@ -1,0 +1,80 @@
+# WindGym Configuration
+
+# --- Initial Settings ---
+yaw_init: "Zeros"
+noise: "None"         # Default: "None". Can be overridden by --noise_level
+BaseController: "Local"
+ActionMethod: "yaw"
+Track_power: False
+
+# --- Farm Parameters ---
+farm:
+  yaw_min: -30
+  yaw_max: 30
+  xDist: 5
+  yDist: 3
+  nx: 2
+  ny: 1
+
+# --- Wind Conditions (Sampling Range) ---
+wind:
+  ws_min: 7
+  ws_max: 12
+  TI_min: 0.05
+  TI_max: 0.15
+  wd_min: 265
+  wd_max: 275
+
+# --- Action Penalty ---
+act_pen:
+  action_penalty: 0.001
+  action_penalty_type: "Change"
+
+# --- Power Reward Definition ---
+power_def:
+  Power_reward: "Baseline"
+  Power_avg: 10
+  Power_scaling: 1.0
+
+# --- Measurement Levels ---
+mes_level:
+  turb_ws: True
+  turb_wd: True       # Default: True. Can be overridden by --disable_turbine_wd
+  turb_TI: True
+  turb_power: False
+  farm_ws: False
+  farm_wd: True       # Default: True. Can be overridden by --disable_farm_wd
+  farm_TI: False
+  farm_power: False
+
+# --- Wind Speed Measurement Details ---
+ws_mes:
+  ws_current: True
+  ws_rolling_mean: True
+  ws_history_N: 3
+  ws_history_length: 20
+  ws_window_length: 5
+
+# --- Wind Direction Measurement Details ---
+wd_mes:
+  wd_current: True
+  wd_rolling_mean: True
+  wd_history_N: 3
+  wd_history_length: 20
+  wd_window_length: 5
+
+# --- Yaw Angle Measurement Details ---
+yaw_mes:
+  yaw_current: True
+  yaw_rolling_mean: True
+  yaw_history_N: 2
+  yaw_history_length: 10
+  yaw_window_length: 1
+
+# --- Power Measurement Details ---
+power_mes:
+  power_current: True
+  power_rolling_mean: True
+  power_history_N: 3
+  power_history_length: 20
+  power_window_length: 5
