@@ -22,6 +22,7 @@ pixi run python scripts/generate_config.py \
   --nx 2 --ny 1 \
   --template configs/N_turbines_most_sensors.yaml \
   --output configs/2_turbines_most_sensors.yaml
+
 pixi run python scripts/eval_leaderboard.py \
    --config-name 2_turbines_most_sensors
 
